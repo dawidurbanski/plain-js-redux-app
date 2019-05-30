@@ -15,19 +15,19 @@
         <!-- COUNTER -->
         <div id="counter-section" class="section flex justify-center items-center">
           <div>
-            <div class="text-6xl text-center" id="counter">0</div>
+            <div class="text-6xl text-center" id="counter"></div>
             <div>
-              <button class="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4"
+              <button class="bg-green-500 hover:bg-green-700 py-2 px-4"
                       id="increase-counter" data-action="incrementCounter">
                 Increase
               </button>
 
-              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4"
+              <button class="bg-blue-500 hover:bg-blue-700 py-2 px-4"
                       id="decrease-counter" data-action="decrementCounter">
                 Decrease
               </button>
 
-              <button class="bg-red-600 hover:bg-blue-700 text-white font-bold py-2 px-4"
+              <button class="bg-red-600 hover:bg-red-700 py-2 px-4"
                       id="reset-counter" data-action="resetCounter">
                 Reset
               </button>
@@ -37,9 +37,24 @@
         <!-- COUNTER END -->
 
         <!-- DONATION METER -->
-        <div id="donation-meter" class="section flex justify-center items-center hidden">
-          <div>
-            donation meter
+        <div id="donation-meter" class="donation section flex justify-center items-center hidden">
+          <div class="w-full">
+            <h4 class="mb-4 text-2xl">Choose the amount:</h4>
+            <div class="flex">
+              <div class="flex w-3/5">
+                <input type="range" id="donation-range-picker" class="donation__range-input"
+                       min="0" max="100" step="1" value="30">
+              </div>
+              <div class="flex justify-center items-center w-1/5">
+                <input type="number" id="donation-input" class="donation__input text-black text-center"
+                       min="0" max="100" step="1" value="30">
+                USD
+              </div>
+              <div class="text-center w-1/5 text-3xl" id="donation-emoji"></div>
+            </div>
+            <div class="donation__amount-bar">
+              <div id="donation-value-bar" class="donation__amount-bar-value"></div>
+            </div>
           </div>
         </div>
         <!-- DONATION METER END -->

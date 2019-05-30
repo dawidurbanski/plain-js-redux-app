@@ -49,6 +49,7 @@ export default class Counter {
   }
 
   update() {
-    this.counter.innerText = this.store.getState().counter;
+    const state = this.store.getState().counterReducer;
+    this.counter.innerText = state.counter;
   }
 }

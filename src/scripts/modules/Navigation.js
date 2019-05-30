@@ -2,8 +2,6 @@ export default class Navigation {
   constructor(selector) {
     const navigation = document.querySelector(selector);
 
-    console.log(navigation.querySelectorAll('a'));
-
     navigation.querySelectorAll('a').forEach(
       link => link.addEventListener(
         'click', e => this.onNavigationLinkClick(e)));
