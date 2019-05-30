@@ -1,8 +1,14 @@
 export default class Counter {
-  constructor(options) {
+  constructor(store, options) {
     this.counter = document.querySelector(options.counter);
+
+    if (! this.counter) {
+      return;
+    }
+
     this.buttons = options.buttons.map(
       button => document.querySelector(button));
+    this.store = store;
 
     this.addButtonsEventListeners();
   }
@@ -16,19 +22,29 @@ export default class Counter {
   onButtonClick(e) {
     e.preventDefault();
 
-    // dynamically call function by button data-action attribute
+    // dynamically call function by button's data-action attribute
     this[e.target.dataset.action]();
   }
 
-  increaseCounter() {
-    console.log('increase!');
+  incrementCounter() {
+    this.store.dispatch({
+      type: 'INCREMENT'
+    });
   }
 
-  decreaseCounter() {
-    console.log('decrease!');
+  decrementCounter() {
+    this.store.dispatch({
+      type: 'DECREMENT'
+    });
   }
 
   resetCounter() {
-    console.log('reset!');
+    this.store.dispatch({
+      type: 'RESET'
+    });
+  }
+
+  update() {
+    this.counter.innerText = this.store.getState().counter;
   }
 }
