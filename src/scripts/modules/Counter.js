@@ -1,5 +1,6 @@
 export default class Counter {
   constructor(store, options) {
+    this.store = store;
     this.counter = document.querySelector(options.counter);
 
     if (! this.counter) {
@@ -8,7 +9,6 @@ export default class Counter {
 
     this.buttons = options.buttons.map(
       button => document.querySelector(button));
-    this.store = store;
 
     this.addButtonsEventListeners();
   }
