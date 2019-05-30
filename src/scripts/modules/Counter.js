@@ -16,7 +16,7 @@ export default class Counter {
   addButtonsEventListeners() {
     this.buttons.forEach(
       button => button.addEventListener(
-        'click', (e) => this.onButtonClick(e)));
+        'click', e => this.onButtonClick(e)));
   }
 
   onButtonClick(e) {

@@ -7,23 +7,43 @@
   <body class="h-screen">
     <div class="flex justify-center items-center w-full h-full">
       <div>
-        <div class="text-6xl text-center" id="counter">0</div>
-        <div>
-          <button class="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4"
-                  id="increase-counter" data-action="incrementCounter">
-            Increase
-          </button>
-
-          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4"
-                  id="decrease-counter" data-action="decrementCounter">
-            Decrease
-          </button>
-
-          <button class="bg-red-600 hover:bg-blue-700 text-white font-bold py-2 px-4"
-                  id="reset-counter" data-action="resetCounter">
-            Reset
-          </button>
+        <div id="navigation" class="text-center mb-6">
+          <a href="#counter-section" class="mr-4 ml-4">Counter</a>
+          <a href="#donation-meter" class="mr-4 ml-4">Donation meter</a>
         </div>
+
+        <!-- COUNTER -->
+        <div id="counter-section" class="section flex justify-center items-center">
+          <div>
+            <div class="text-6xl text-center" id="counter">0</div>
+            <div>
+              <button class="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4"
+                      id="increase-counter" data-action="incrementCounter">
+                Increase
+              </button>
+
+              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4"
+                      id="decrease-counter" data-action="decrementCounter">
+                Decrease
+              </button>
+
+              <button class="bg-red-600 hover:bg-blue-700 text-white font-bold py-2 px-4"
+                      id="reset-counter" data-action="resetCounter">
+                Reset
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- COUNTER END -->
+
+        <!-- DONATION METER -->
+        <div id="donation-meter" class="section flex justify-center items-center hidden">
+          <div>
+            donation meter
+          </div>
+        </div>
+        <!-- DONATION METER END -->
+
       </div>
     </div>
   </body>
