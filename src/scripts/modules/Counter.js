@@ -22,6 +22,10 @@ export default class Counter {
   onButtonClick(e) {
     e.preventDefault();
 
+    if (! e.target.dataset.action) {
+      return;
+    }
+
     // dynamically call function by button's data-action attribute
     this[e.target.dataset.action]();
   }
